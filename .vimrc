@@ -68,8 +68,9 @@ filetype plugin indent on    " required
 
 set background=dark
 let g:solarized_termtrans = 1
-let g:solarized_visibility = 'high'
+" let g:solarized_visibility = 'high'
 colorscheme solarized
+let g:solarized_termcolors=256
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
