@@ -186,3 +186,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 # move to xinitrc ?
 # wifi manager
 exec --no-startup-id nm-applet
+exec --no-startup-id gnome-sound-applet
+exec sh( gsettings set org.gnome.desktop.background show-desktop-icons false )
+
+
