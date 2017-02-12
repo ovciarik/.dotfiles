@@ -208,6 +208,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 bindsym XF86Display exec xbacklight -set 1 # set screen brightness to min
 
+bindsym Print exec scrot # print screen
+
 # wifi manager
 exec --no-startup-id nm-applet
 
