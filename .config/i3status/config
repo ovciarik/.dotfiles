@@ -11,8 +11,8 @@ general {
         interval = 5
 	color_good = '#859900' 
 	color_bad = '#dc322f'
-	color_degraded = '#cb4b16'
-	color_charging = '#85990'
+	color_degraded = '#b58900'
+	color_charging = '#859900'
 }
 
 order += "backlight"
