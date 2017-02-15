@@ -15,6 +15,7 @@ order += "cpu_usage"
 order += "sysdata"
 order += "battery_level"
 order += "wireless _first_"
+order += "ethernet _first_"
 order += "weather_yahoo"
 order += "tztime local"
 order += "static_string"
@@ -51,7 +52,11 @@ sysdata {
 
 wireless _first_ {
 	format_up = "WiFi: %quality at %essid, %ip"
-	format_down = "W: down"
+	format_down = "WiFi: down"
+}
+
+ethernet _first {
+	format = "LAN: %ip (%speed)"
 }
 
 battery_level {

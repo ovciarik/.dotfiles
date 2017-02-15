@@ -86,5 +86,5 @@ export LANG=en_US.UTF-8
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-
+export LC_CTYPE=en_US.UTF-8
 

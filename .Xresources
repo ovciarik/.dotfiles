@@ -82,3 +82,6 @@
 !! set font and size
 !!*faceName: 				DejaVu Sans Mono
 *faceSize:				12
+
+!! antialised fonts
+Xft.rgba:				rgb
