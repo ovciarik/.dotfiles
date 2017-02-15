@@ -102,7 +102,7 @@ bindsym $mod+a focus parent
 set $W1 1: 
 set $W2 2:
 set $W3 3:
-set $W4 4
+set $W4 4:
 set $W5 5
 set $W6 6
 set $W7 7
