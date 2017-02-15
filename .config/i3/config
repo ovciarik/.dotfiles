@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:InputMono Medium 8
+# font pango:InputMono Medium 8
+font pango:SourceCodePro Regular 8
 new_window pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -44,7 +45,8 @@ bindsym $mod+Shift+q kill
 
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn "Input Mono-8" -nf '#f3f4f5' -nb '#2f343f' -sf '#f2f3f4' -sb '#5192df'
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "Input Mono-8" -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
+# bindsym $mod+d exec --no-startup-id dmenu_run -fn "Input Mono-8" -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "SourceCodePro-8" -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
 
 # change focus
 bindsym $mod+h focus left
@@ -156,16 +158,16 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
  bar {
-         position bottom
-         status_command py3status -c ~/.config/i3status/config
+        position bottom
+        status_command py3status -c ~/.config/i3status/config
  	colors {
- 	background #002b36
- 	statusline #839496
- 	separator  #586e75
- 	focused_workspace  #b58900 #b58900 #002b36
- 	active_workspace   #586e75 #586e75 #002b36
- 	inactive_workspace #073642 #002b36 #839496
- 	urgent_workspace   #dc322f #dc322f #fdf6e3
+		background 		#002b36
+		statusline 		#839496
+		separator  		#586e75
+		focused_workspace  	#b58900 #b58900 #002b36
+		active_workspace   	#586e75	#586e75 #002b36
+		inactive_workspace 	#073642 #002b36 #839496
+		urgent_workspace   	#dc322f #dc322f #fdf6e3
         }
  }
 
@@ -181,14 +183,13 @@ bindsym $mod+r mode "resize"
 	# }
 # }
 
-
-
+# class                 border  backgr. text    indicator child_border
 client.focused          #002b36 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #002b36 #073642 #839496 #073642
 client.unfocused        #002b36 #073642 #839496 #073642
-client.urgent #002b36 #dc322f #fdf6e3 #002b36
+client.urgent 		#002b36 #dc322f #fdf6e3 #002b36
 
-# set $bg-color 	         #2f343f
+# set $bg-color 	   #2f343f
 # set $inactive-bg-color   #2f343f
 # set $text-color          #f3f4f5
 # set $inactive-text-color #676E7D
@@ -224,10 +225,12 @@ exec --no-startup-id feh --bg-scale ~/Pictures/background.png
 
 exec --no-startup-id fluxgui
 
+# notification server
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # Fix Nautilius issue on Ubuntu
 exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
+# Remap CapsLock to Esc
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'

@@ -1,5 +1,6 @@
 [global]
-    font = Input Mono 10
+    # font = Input Mono 10
+    font = SourceCodePro 10
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
