@@ -3,18 +3,19 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
 
-# i3 config file (v4)
-#
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
 
+set $font Source Code Pro Regular 8
+set $font_dmenu "SourceCodePro-8"
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:InputMono Medium 8
-font pango:Source Code Pro Regular 8
+# font pango:Source Code Pro Regular 8
+font pango:$font 
 new_window pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -46,7 +47,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn "Input Mono-8" -nf '#f3f4f5' -nb '#2f343f' -sf '#f2f3f4' -sb '#5192df'
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn "Input Mono-8" -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "SourceCodePro-8" -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
+bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
 
 # change focus
 bindsym $mod+h focus left
@@ -97,30 +98,40 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+# Workspace Names 
+set $W1 1: 
+set $W2 2:
+set $W3 3:
+set $W4 4
+set $W5 5
+set $W6 6
+set $W7 7
+set $W8 8
+set $W9 9
+set $W0 0
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $W1
+bindsym $mod+2 workspace $W2
+bindsym $mod+3 workspace $W3
+bindsym $mod+4 workspace $W4
+bindsym $mod+5 workspace $W5
+bindsym $mod+6 workspace $W6
+bindsym $mod+7 workspace $W7
+bindsym $mod+8 workspace $W8
+bindsym $mod+9 workspace $W9
+bindsym $mod+0 workspace $W0
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $W1
+bindsym $mod+Shift+2 move container to workspace $W2
+bindsym $mod+Shift+3 move container to workspace $W3
+bindsym $mod+Shift+4 move container to workspace $W4
+bindsym $mod+Shift+5 move container to workspace $W5
+bindsym $mod+Shift+6 move container to workspace $W6
+bindsym $mod+Shift+7 move container to workspace $W7
+bindsym $mod+Shift+8 move container to workspace $W8
+bindsym $mod+Shift+9 move container to workspace $W9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -161,9 +172,9 @@ bindsym $mod+r mode "resize"
         position bottom
         status_command py3status -c ~/.config/i3status/config
  	colors {
-		background 		#002b36
-		statusline 		#839496
-		separator  		#586e75
+		background 			#002b36
+		statusline 			#839496
+		separator  			#586e75
 		focused_workspace  	#b58900 #b58900 #002b36
 		active_workspace   	#586e75	#586e75 #002b36
 		inactive_workspace 	#073642 #002b36 #839496
@@ -221,7 +232,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
 
 # exec --no-startup-id xsetroot -solid "#2f343f"
-exec --no-startup-id feh --bg-scale ~/Pictures/background.png
+exec --no-startup-id feh --bg-scale ~/.config/background.png
 
 exec --no-startup-id fluxgui
 
