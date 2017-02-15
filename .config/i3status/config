@@ -12,6 +12,7 @@ order += "spotify"
 order += "backlight"
 order += "volume master"
 order += "cpu_usage"
+order += "sysdata"
 order += "battery_level"
 order += "wireless _first_"
 order += "weather_yahoo"
@@ -42,6 +43,10 @@ volume master {
 
 cpu_usage {
 	format = "CPU: %usage"
+}
+
+sysdata {
+	format = "RAM: {mem_used}/{mem_total} GiB"
 }
 
 wireless _first_ {
