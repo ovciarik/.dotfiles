@@ -80,7 +80,7 @@
 *customization:			-
 
 !! set font and size
-!!*faceName: 				DejaVu Sans Mono
+*faceName: 				DejaVu Sans Mono
 *faceSize:				12
 
 !! antialised fonts
