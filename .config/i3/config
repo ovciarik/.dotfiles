@@ -244,4 +244,5 @@ exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
 # Remap CapsLock to Esc
-exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+exec setxkbmap -option 'caps:ctrl_modifier'
+exec xcape -e 'Caps_Lock=Escape;Control_L=Escape;Control_R=Escape'

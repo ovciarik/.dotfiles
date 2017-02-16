@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git pip command-not-found sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,3 +88,8 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export LC_CTYPE=en_US.UTF-8
 
+setopt completealiases
+
+# ^P and ^N behave like arrows
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
