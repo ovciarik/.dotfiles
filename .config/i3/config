@@ -8,7 +8,7 @@
 
 set $mod Mod4
 
-set $font Source Code Pro Regular 8
+set $font Source Code Pro Bold 8
 set $font_dmenu "SourceCodePro-8"
 
 # Font for window titles. Will also be used by the bar unless a different font

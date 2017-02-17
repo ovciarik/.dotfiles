@@ -93,3 +93,5 @@ setopt completealiases
 # ^P and ^N behave like arrows
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
+
+alias ranger='env EDITOR=less ranger'

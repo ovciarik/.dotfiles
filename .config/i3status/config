@@ -55,8 +55,9 @@ wireless _first_ {
 	format_down = "WiFi: down"
 }
 
-ethernet _first {
-	format = "LAN: %ip (%speed)"
+ethernet _first_ {
+	format_up = "LAN: %ip (%speed)"
+	format_down = "LAN: down"
 }
 
 battery_level {
