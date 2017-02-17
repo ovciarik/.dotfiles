@@ -1,2 +1,5 @@
 shell mkdir xxx
+open_with jq
 delete
+open_with lq
+open_with eq
