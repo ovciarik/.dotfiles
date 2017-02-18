@@ -42,4 +42,7 @@ set background=dark
 colorscheme solarized
 
 map <C-M> gccj
+map Q <Nop>
+map :q <Nop>
+
 
