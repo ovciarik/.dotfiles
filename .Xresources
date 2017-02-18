@@ -85,3 +85,8 @@
 
 !! antialised fonts
 Xft.rgba:				rgb
+
+!! urxvt
+URxvt.font: xft:Source Code Pro:size=12
+URxvt.intensityStyles: false
+URxvt*scrollBar:        false
