@@ -244,5 +244,10 @@ exec_always gsettings set org.gnome.desktop.background show-desktop-icons false
 exec_always gsettings set org.nemo.desktop show-desktop-icons false
 
 # Remap CapsLock to Esc
-exec setxkbmap -option 'caps:ctrl_modifier'
-exec xcape -e 'Caps_Lock=Escape;Control_L=Escape;Control_R=Escape'
+# exec setxkbmap -option 'caps:ctrl_modifier'
+exec xmodmap ~/.Xmodmap
+exec xcape -e 'Mode_switch=Escape'
+
+# sync clipboards
+exec --no-startup-id autocutsel
+exec --no-startup-id autocutsel -s PRIMARY
