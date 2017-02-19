@@ -1,4 +1,3 @@
-
 " basic settings
 set number
 set relativenumber
@@ -6,4 +5,4 @@ set hlsearch
 set ignorecase
 set incsearch
 set clipboard=unnamed
-
+set surround
