@@ -6,5 +6,4 @@ set ignorecase
 set incsearch
 set clipboard=unnamed
 set surround
-nnoremap ; :
 

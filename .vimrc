@@ -31,8 +31,7 @@ else
 endif
 colorscheme solarized
 
-map <C-M> gccj
+map <C-K> gccj
 map Q <Nop>
 map q: <Nop>
-nnoremap ; :
 
