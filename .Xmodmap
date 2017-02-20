@@ -1,0 +1,22 @@
+! remove Caps Lock
+clear lock
+remove Lock = Caps_Lock
+remove Shift = Caps_Lock
+! add Mode_switch
+keycode 66 = NoSymbol NoSymbol
+keycode 66 = Mode_switch
+
+keycode 43 = h H Left NoSymbol NoSymbol NoSymbol
+keycode 44 = j J Down NoSymbol NoSymbol NoSymbol
+keycode 45 = k K Up NoSymbol NoSymbol NoSymbol
+keycode 46 = l L Right NoSymbol lstroke Lstroke
+keycode 33 = p P Up NoSymbol lstroke Lstroke
+keycode 57 = n N Down NoSymbol lstroke Lstroke
+
+!Swap right control and right alt
+remove Control = Control_R
+remove Mod1 = Alt_R
+keycode 105 = Alt_R
+keycode 108 = Control_R
+add Control = Control_R
+add Mod1 = Alt_R
