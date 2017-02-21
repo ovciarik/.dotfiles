@@ -251,3 +251,5 @@ exec xcape -e 'Mode_switch=Escape'
 # sync clipboards
 exec --no-startup-id autocutsel
 exec --no-startup-id autocutsel -s PRIMARY
+
+exec --no-startup-id xset r rate 250 25
