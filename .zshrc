@@ -95,3 +95,5 @@ bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
 alias ranger='env EDITOR=less ranger'
+alias apt-installed='comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n "s/^Package: //p" | sort -u) | less'
+alias apt='apt-get'
