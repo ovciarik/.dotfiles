@@ -227,6 +227,9 @@ bindsym XF86Display exec xbacklight -set 1 # set screen brightness to min
 
 bindsym Print exec scrot # print screen
 
+# volume control
+exec --no-startup-id pnmixer
+
 # wifi manager
 exec --no-startup-id nm-applet
 
