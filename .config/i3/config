@@ -218,7 +218,7 @@ client.urgent 		#002b36 #dc322f #fdf6e3 #002b36
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle # mute sound
-# bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 sset Mic toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 set Capture toggle
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
@@ -230,21 +230,24 @@ bindsym Print exec scrot # print screen
 # wifi manager
 exec --no-startup-id nm-applet
 
+# gnome theme
 exec --no-startup-id gnome-settings-daemon
 
+# backgroud
 exec --no-startup-id xsetroot -solid "#002b36"
 # exec --no-startup-id feh --bg-scale ~/.config/background.png
 
+# flux for night mode
 exec --no-startup-id fluxgui
 
 # notification server
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
-# Fix Nautilius issue on Ubuntu
+# fix nautilius issue on Ubuntu
 exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
 exec --no-startup-id gsettings set org.nemo.desktop show-desktop-icons false
 
-# Remap CapsLock to Esc
+# remap capslock to esc
 # exec setxkbmap -option 'caps:ctrl_modifier'
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xcape -e 'Mode_switch=Escape'
@@ -253,4 +256,5 @@ exec --no-startup-id xcape -e 'Mode_switch=Escape'
 exec --no-startup-id autocutsel
 exec --no-startup-id autocutsel -s PRIMARY
 
+# set keyboard repetition rate
 exec --no-startup-id xset r rate 250 25
