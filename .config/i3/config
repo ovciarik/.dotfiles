@@ -34,7 +34,8 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
- bindsym $mod+Return exec /usr/local/bin/st
+bindsym $mod+Return exec /usr/local/bin/st
+bindsym $mod+semicolon exec /usr/local/bin/st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -108,7 +109,7 @@ set $W6 6
 set $W7 7
 set $W8 8
 set $W9 9
-set $W0 0
+set $W0 10
 
 # switch to workspace
 bindsym $mod+1 workspace $W1
