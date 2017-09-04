@@ -90,10 +90,11 @@ export LC_CTYPE=en_US.UTF-8
 
 setopt completealiases
 
-# ^P and ^N behave like arrows
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
-
-alias ranger='env EDITOR=less ranger'
 alias apt-installed='comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n "s/^Package: //p" | sort -u) | less'
 alias apt='apt-get'
+
+# export XDG_CURRENT_DESKTOP=KDE
+# export XDG_SESSION_DESKTOP=KDE
+# export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
+# export QT_QPA_PLATFORMTHEME="qt5ct"
+# export DESKTOP_SESSION=KDE

@@ -34,8 +34,8 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec /usr/local/bin/st
-bindsym $mod+semicolon exec /usr/local/bin/st
+bindsym $mod+Return exec /usr/bin/urxvt
+bindsym $mod+semicolon exec /usr/bin/urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -229,13 +229,13 @@ bindsym XF86Display exec xbacklight -set 1 # set screen brightness to min
 bindsym Print exec scrot # print screen
 
 # volume control
-exec --no-startup-id pnmixer
+# exec --no-startup-id pnmixer
+# exec --no-startup-id kmix
+# exec --no-startup-id volumeicon
+
 
 # wifi manager
 exec --no-startup-id nm-applet
-
-# gnome theme
-exec --no-startup-id gnome-settings-daemon
 
 # backgroud
 exec --no-startup-id xsetroot -solid "#002b36"
@@ -247,10 +247,6 @@ exec --no-startup-id fluxgui
 # notification server
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
-# fix nautilius issue on Ubuntu
-exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
-exec --no-startup-id gsettings set org.nemo.desktop show-desktop-icons false
-
 # remap capslock to esc
 # exec setxkbmap -option 'caps:ctrl_modifier'
 exec --no-startup-id xmodmap ~/.Xmodmap
@@ -261,4 +257,21 @@ exec --no-startup-id autocutsel
 exec --no-startup-id autocutsel -s PRIMARY
 
 # set keyboard repetition rate
-exec --no-startup-id xset r rate 250 25
+exec --no-startup-id xset r rate 250 30
+
+# Gnome fixes
+
+# gnome theme
+# exec --no-startup-id gnome-settings-daemon
+
+# fix nautilius issue on Ubuntu
+# exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
+# exec --no-startup-id gsettings set org.nemo.desktop show-desktop-icons false
+
+# KDE fixes
+
+# KDE support
+# exec --no-startup-id wmctrl -c Plasma
+# for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+for_window [class="Kmix"] floating enable, window_type popup_menu
