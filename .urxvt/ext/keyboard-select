@@ -600,4 +600,7 @@ sub on_sel_grab {
     open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
     print $pipe $query;
     close $pipe;
+    open (my $pipe,'| /usr/bin/xclip -in -selection primary') or die;
+    print $pipe $query;
+    close $pipe;
 }
