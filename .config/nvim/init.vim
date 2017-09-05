@@ -5,8 +5,8 @@ set clipboard+=unnamedplus
 set relativenumber
 
 call plug#begin()
-Plug 'iCyMind/NeoSolarized'
-Plug 'tpope/vim-commentary'
+    Plug 'iCyMind/NeoSolarized'
+    Plug 'tpope/vim-commentary'
 call plug#end()
 
 " solarized color scheme

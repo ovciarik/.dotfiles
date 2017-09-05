@@ -16,3 +16,8 @@ pip install py3status
 
 # neovim plugin manager
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# set zsh config to config
+echo ZDOTDIR=$HOME/.config/zsh > /etc/zsh/zshenv
+echo HISTFILE="$XDG_DATA_HOME"/zsh/history > /etc/zsh/zshenv    
+
