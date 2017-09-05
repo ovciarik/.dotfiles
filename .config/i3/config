@@ -228,6 +228,9 @@ bindsym XF86Display exec xbacklight -set 1 # set screen brightness to min
 
 bindsym Print exec scrot # print screen
 
+# enforce US layout
+exec --no-startup-id setxkbmap -layout us
+
 # volume control
 # exec --no-startup-id pnmixer
 # exec --no-startup-id kmix

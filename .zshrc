@@ -98,3 +98,4 @@ alias apt='apt-get'
 # export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 # export DESKTOP_SESSION=KDE
+alias lock='i3lock -c 002b36'
