@@ -256,8 +256,8 @@ exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xcape -e 'Mode_switch=Escape'
 
 # sync clipboards
-exec --no-startup-id autocutsel
-exec --no-startup-id autocutsel -s PRIMARY
+# exec --no-startup-id autocutsel
+# exec --no-startup-id autocutsel -s PRIMARY
 
 # set keyboard repetition rate
 exec --no-startup-id xset r rate 250 30

@@ -86,7 +86,7 @@
 !! urxvt
 URxvt.saveLines: 1000000
 
-URxvt.font: xft:Source Code Pro:pixelsize=16:antialis=true
+URxvt.font: xft:Source Code Pro:pixelsize=14:antialis=true
 URxvt.intensityStyles: false
 URxvt*scrollBar:        false
 

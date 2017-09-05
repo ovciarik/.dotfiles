@@ -1,1 +1,2 @@
 XDG_CURRENT_DESKTOP=KDE
+xrandr --auto --output HDMI1 --mode 2560x1440 --left-of eDP1
