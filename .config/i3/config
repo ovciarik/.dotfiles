@@ -16,7 +16,7 @@ set $font_dmenu "SourceCodePro-8"
 # font pango:InputMono Medium 8
 # font pango:Source Code Pro Regular 8
 font pango:$font 
-new_window pixel 0
+new_window pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).

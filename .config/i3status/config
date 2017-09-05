@@ -7,7 +7,6 @@ general {
 	color_charging = 	'#859900'
 }
 
-order += "xsel"
 order += "spotify"
 order += "backlight"
 order += "volume master"
@@ -20,10 +19,6 @@ order += "weather_yahoo"
 order += "tztime local"
 order += "static_string"
 
-xsel {
-	max_size = 30
-
-}
 
 spotify {
 	color_playing = "#839496"
