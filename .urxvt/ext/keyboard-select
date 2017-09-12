@@ -131,6 +131,8 @@ sub key_press {
 	} elsif (lc($key) eq 'y' || $keysym == 0xff0d ||
 			(lc($key) eq 'm' && $event->{state} & urxvt::ControlMask)) {
 		my $quit = 0;
+
+
 		if ($key eq 'Y' && $self->{select} ne 'l') {
 			$quit = !$self->{select};
 			toggle_select($self, 'l');
@@ -144,6 +146,13 @@ sub key_press {
 			if (lc($key) eq 'y') {
 				$self->selection_beg(1, 0);
 				$self->selection_end(1, 0);
+
+
+        open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
+        print $pipe $self->{select};
+        close $pipe;
+
+
 				$self->{select} = '';
 				status_area($self);
 				$self->want_refresh();
@@ -595,12 +604,12 @@ sub calc_span {
 
 	return ($br, $bc, $er, $ec);
 }
-sub on_sel_grab {
-    my $query = $_[0]->selection;
-    open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
-    print $pipe $query;
-    close $pipe;
-    open (my $pipe,'| /usr/bin/xclip -in -selection primary') or die;
-    print $pipe $query;
-    close $pipe;
-}
+# sub on_sel_grab {
+    # my $query = $_[0]->selection;
+    # open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
+    # print $pipe $query;
+    # close $pipe;
+    # open (my $pipe,'| /usr/bin/xclip -in -selection primary') or die;
+    # print $pipe $query;
+    # close $pipe;
+# }
