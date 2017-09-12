@@ -8,7 +8,8 @@
 
 set $mod Mod4
 
-set $font Source Code Pro Bold 8
+# set $font Source Code Pro Bold 8
+set $font Source Code Pro Semibold 8
 set $font_dmenu "SourceCodePro-8"
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -100,11 +101,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 # Workspace Names 
-set $W1 1: 
-set $W2 2:
-set $W3 3:
-set $W4 4:
-set $W5 5:
+set $W1 1
+set $W2 2
+set $W3 3
+set $W4 4
+set $W5 5
 set $W6 6
 set $W7 7
 set $W8 8
@@ -177,7 +178,7 @@ bindsym $mod+r mode "resize"
 		background 			#002b36
 		statusline 			#839496
 		separator  			#586e75
-		focused_workspace  	#b58900 #b58900 #002b36
+		focused_workspace  	#268bd2 #268bdf #002b36
 		active_workspace   	#586e75	#586e75 #002b36
 		inactive_workspace 	#073642 #002b36 #839496
 		urgent_workspace   	#dc322f #dc322f #fdf6e3
@@ -197,13 +198,13 @@ bindsym $mod+r mode "resize"
 # }
 
 # class                 border  backgr. text    indicator child_border
-# client.focused          #002b36 #586e75 #fdf6e3 #268bd2
-client.focused          #002b36 #b58900 #fdf6e3 #268bd2
+# client.focused        #002b36 #586e75 #fdf6e3 #268bd2
+client.focused          #002b36 #268bd2 #fdf6e3 #268bd2
 client.focused_inactive #002b36 #073642 #839496 #073642
 client.unfocused        #002b36 #073642 #839496 #073642
-client.urgent 		#002b36 #dc322f #fdf6e3 #002b36
+client.urgent 		    #002b36 #dc322f #fdf6e3 #002b36
 
-# set $bg-color 	   #2f343f
+# set $bg-color 	       #2f343f
 # set $inactive-bg-color   #2f343f
 # set $text-color          #f3f4f5
 # set $inactive-text-color #676E7D
@@ -239,7 +240,7 @@ exec --no-startup-id setxkbmap -layout us
 
 
 # wifi manager
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # backgroud
 exec --no-startup-id xsetroot -solid "#002b36"
