@@ -79,3 +79,5 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+
+highlight Whitespace ctermfg=Black
