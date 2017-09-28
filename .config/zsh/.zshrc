@@ -100,3 +100,4 @@ alias apt='apt-get'
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 # export DESKTOP_SESSION=KDE
 alias lock='i3lock -c 002b36'
+alias cal='cal -y'

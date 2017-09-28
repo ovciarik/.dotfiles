@@ -44,7 +44,7 @@ set smartindent
 set cursorline
 
 " show whitespace
-" set list
+set list
 set listchars=space:.,tab:>-
 
 "" Enable hidden buffers

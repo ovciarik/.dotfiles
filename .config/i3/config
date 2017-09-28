@@ -174,27 +174,27 @@ bindsym $mod+r mode "resize"
  bar {
         position bottom
         status_command py3status -c ~/.config/i3status/config
- 	colors {
-		background 			#002b36
-		statusline 			#839496
-		separator  			#586e75
-		focused_workspace  	#268bd2 #268bdf #002b36
-		active_workspace   	#586e75	#586e75 #002b36
-		inactive_workspace 	#073642 #002b36 #839496
-		urgent_workspace   	#dc322f #dc322f #fdf6e3
+    colors {
+                background                      #002b36
+                statusline                      #839496
+                separator                       #586e75
+                focused_workspace       #268bd2 #268bdf #002b36
+                active_workspace        #586e75 #586e75 #002b36
+                inactive_workspace      #073642 #002b36 #839496
+                urgent_workspace        #dc322f #dc322f #fdf6e3
         }
  }
 
 # bar {
-  	# status_command py3status -c ~/.config/i3status/config
-	# colors {
-		# background $bg-color
-	    	# separator #757575
-		# #                  border             background         text
-		# focused_workspace  $bg-color          $bg-color          $text-color
-		# inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		# urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	# }
+        # status_command py3status -c ~/.config/i3status/config
+        # colors {
+                # background $bg-color
+                # separator #757575
+                # #                  border             background         text
+                # focused_workspace  $bg-color          $bg-color          $text-color
+                # inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+                # urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+        # }
 # }
 
 # class                 border  backgr. text    indicator child_border
@@ -202,9 +202,9 @@ bindsym $mod+r mode "resize"
 client.focused          #002b36 #268bd2 #fdf6e3 #268bd2
 client.focused_inactive #002b36 #073642 #839496 #073642
 client.unfocused        #002b36 #073642 #839496 #073642
-client.urgent 		    #002b36 #dc322f #fdf6e3 #002b36
+client.urgent               #002b36 #dc322f #fdf6e3 #002b36
 
-# set $bg-color 	       #2f343f
+# set $bg-color                #2f343f
 # set $inactive-bg-color   #2f343f
 # set $text-color          #f3f4f5
 # set $inactive-text-color #676E7D
@@ -240,14 +240,14 @@ exec --no-startup-id setxkbmap -layout us
 
 
 # wifi manager
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # backgroud
 exec --no-startup-id xsetroot -solid "#002b36"
 # exec --no-startup-id feh --bg-scale ~/.config/background.png
 
 # flux for night mode
-# exec --no-startup-id fluxgui
+exec --no-startup-id fluxgui
 
 # notification server
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
