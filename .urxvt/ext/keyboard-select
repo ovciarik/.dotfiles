@@ -605,4 +605,8 @@ sub on_sel_grab {
     open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
     print $pipe $query;
     close $pipe;
+    # remove vvv this if you want only clipboard selection
+    open (my $pipe,'| /usr/bin/xclip -in -selection primary') or die;
+    print $pipe $query;
+    close $pipe;
 }
