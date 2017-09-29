@@ -1,5 +1,5 @@
 " use system clipboard
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 " show realitive line numbers
 set relativenumber

@@ -35,3 +35,5 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 # set zsh config to config
 echo ZDOTDIR=$HOME/.config/zsh > /etc/zsh/zshenv
 
+# fix for pycharm clipboards
+apt-get purge xsel
