@@ -147,11 +147,7 @@ sub key_press {
 				$self->selection_beg(1, 0);
 				$self->selection_end(1, 0);
 
-
-        open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
-        print $pipe $self->{select};
-        close $pipe;
-
+ 
 
 				$self->{select} = '';
 				status_area($self);
@@ -604,12 +600,9 @@ sub calc_span {
 
 	return ($br, $bc, $er, $ec);
 }
-# sub on_sel_grab {
-    # my $query = $_[0]->selection;
-    # open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
-    # print $pipe $query;
-    # close $pipe;
-    # open (my $pipe,'| /usr/bin/xclip -in -selection primary') or die;
-    # print $pipe $query;
-    # close $pipe;
-# }
+sub on_sel_grab {
+    my $query = $_[0]->selection;
+    open (my $pipe,'| /usr/bin/xclip -in -selection clipboard') or die;
+    print $pipe $query;
+    close $pipe;
+}
