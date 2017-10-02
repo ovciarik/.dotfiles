@@ -7,3 +7,4 @@ set incsearch
 set clipboard=unnamed
 set surround
 
+nnoremap n nzz
