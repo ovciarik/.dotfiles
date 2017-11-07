@@ -79,7 +79,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+o split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -227,6 +227,10 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 set Capture toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 bindsym XF86Display exec xbacklight -set 1 # set screen brightness to min
+
+# doesn't work ....
+# bindsym $mod+c exec xclip -i -selection clipboard
+# bindsym $mod+v exec xclip -o -selection clipboard
 
 bindsym Print exec scrot # print screen
 
