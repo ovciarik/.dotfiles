@@ -42,6 +42,7 @@ call plug#begin()
 
 call plug#end()
 
+let g:loaded_python3_provider=1
 " solarized color scheme
 colorscheme NeoSolarized
 set background=dark
