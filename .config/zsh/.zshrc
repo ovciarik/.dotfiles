@@ -102,3 +102,5 @@ alias lock='i3lock -c 002b36'
 alias cal='cal -y'
 PLAN9=/home/xillix/proj/plan9port export PLAN9
 PATH=$PATH:$PLAN9/bin export PATH
+
+alias ra='ranger'

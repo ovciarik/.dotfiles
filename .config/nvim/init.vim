@@ -10,16 +10,16 @@ call plug#begin()
     Plug 'w0rp/ale'
 
     " git integration
-    Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
+    " Plug 'tpope/vim-fugitive'
+    " Plug 'airblade/vim-gitgutter'
 
     " project navigation
     Plug 'scrooloose/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
-    Plug 'vim-scripts/grep.vim'
+    " Plug 'vim-scripts/grep.vim'
 
     " tagbar
-    Plug 'majutsushi/tagbar'
+    " Plug 'majutsushi/tagbar'
 
     " python integration: jump to definition / find usage / rename
     Plug 'ervandew/supertab'
@@ -34,7 +34,7 @@ call plug#begin()
     Plug 'tpope/vim-surround'
 
     " quality of life
-    Plug 'bronson/vim-trailing-whitespace'
+    " Plug 'bronson/vim-trailing-whitespace'
     Plug 'iCyMind/NeoSolarized'
 
     " buffers as tabs
@@ -149,10 +149,10 @@ let g:ale_echo_msg_format = '%severity%: %s [%linter%]'
 let g:ale_echo_msg_warning_str = 'Warn'
 let g:ale_enabled = 1
 let g:ale_keep_list_window_open = 0
-let g:ale_lint_delay = 16
-let g:ale_lint_on_enter = 1
+let g:ale_lint_delay = 200
+" let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_on_text_changed = 'normal'
 let g:ale_linter_aliases = {}
 let g:ale_linters = {'Haskell': [], 'AsciiDoc': [], 'HTML': [], 'YAML': [], 'TypeScript': [], 'CMake^I': [], 'nix^I': [], 'go': ['go build', 'golint', 'go vet'], 'OCaml^I': [], 'Lua^I': [], 'Erlang^I': [], 'SASS^I': [], 'ASM': [], 'MATLAB^I': [], 'SML^I': [], 'nroff^I': [], 'reStructuredText^I': [], 'CSS': [], 'PHP': [], 'Markdown': [], 'ruby': ['ruby'], 'Rust^I': [], 'C': [], 'Verilog': [], 'XHTML': [], 'Ansible': [], 'Elixir': [], 'JSON^I': [], 'Scala^I': [], 'Crystal^I': [], 'Chef^I': [], 'Kotlin^I': [], 'RPM': [], 'Slim^I': [], 'LaTeX^I': [], 'Bash': [], 'Java^I': [], 'Swift^I': [], 'Texinfo^I': [], 'Perl^I': [], 'C++': [], 'SQL^I': [], 'Ruby': [], 'C#^I': [], 'Pod^I': [], 'Erb^I': [], 'ReasonML': [], 'SCSS^I': [], 'Bourne Shell': [], 'Vim': [], 'Haml': [], 'CoffeeScript': [], 'Fortran^I': [], 'Dockerfile': [], 'D^I': [], 'Text^': [], 'Nim^I': [], 'Elm^I': [], 'Pug^I': [], 'JavaScript': [], 'Cython': [], 'Puppet^I': [], 'Handlebars': [], 'Python': ['flake8']}
 let g:ale_open_list = 0
