@@ -105,3 +105,6 @@ PATH=$PATH:$PLAN9/bin export PATH
 
 alias ra='ranger'
 alias shitpostify="python -c 'print(reduce(lambda xx, yy: xx+yy[2:], reduce(lambda x, y: [x[0]+y[0], x[1]+y[1]],map(lambda x: [x, \"\n\"+x], raw_input().strip()))))'"
+
+yank() { LBUFFER=$LBUFFER$(xclip -o -selection "clipboard") }
+zle -N yank # bound on C-y
