@@ -90,8 +90,10 @@ URxvt.font: xft:Source Code Pro:pixelsize=14:antialis=true
 URxvt.intensityStyles: false
 URxvt*scrollBar:        false
 
-URxvt.perl-ext-common: keyboard-select
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.perl-ext-common: keyboard-select,clipboard
+URxvt.keysym.Control-v:   perl:clipboard:paste
+UURxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboardRxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 URxvt.keysym.Control-Tab: \033[27;5;9~
 URxvt.keysym.Control-ISO_Left_Tab: \033[27;6;9~

@@ -12,7 +12,7 @@ keycode 45 = k K Up NoSymbol NoSymbol NoSymbol
 keycode 46 = l L Right NoSymbol lstroke Lstroke
 keycode 33 = p P Up NoSymbol lstroke Lstroke
 keycode 57 = n N Down NoSymbol lstroke Lstroke
-keycode 47 = semicolon colon Return colon semicolon colon
+keycode 57 = m M Return NoSymbol lstroke Lstroke
 
 !Swap right control and right alt
 remove Control = Control_R
