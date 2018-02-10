@@ -1,67 +1,31 @@
 general {
-	colors = true
+	colors = false
     interval = 5
-	color_good = 		'#859900' 
-	color_bad = 		'#dc322f'
-	color_degraded = 	'#b58900'
-	color_charging = 	'#859900'
 }
 
+order += "wireless wlp4s0"
+order += "ethernet enp0s25"
+order += "battery 0"
 order += "tztime local"
-
-
-spotify {
-	color_playing = "#839496"
-}
-
-backlight {
-	format= "BRT: {level}%"
-	cache_timeout = 0
-}
-
-volume master {
-    format = "VOL: %volume"
-    format_muted = "VOL: muted (%volume)"
-    device = "default"
-    mixer = "Master"
-    mixer_idx = 0
-}
-
-cpu_usage {
-	format = "CPU: %usage"
-}
-
-sysdata {
-	format = "RAM: {mem_used}/{mem_total} GiB"
-}
-
-wireless _first_ {
-	format_up = "WiFi"
-	format_down = "WiFi"
-}
-
-ethernet _first_ {
-	format_up = "LAN"
-	format_down = "LAN"
-}
-
-battery_level {
-	format = "BAT: {percent}%, {time_remaining}"
-	cache_timeout = 10
-	notify_low_level = true
-}
-
-weather_yahoo {
-	# woeid of Bratislava
-	woeid = 20070505
-	forecast_days = 0
-	format_today = '{icon} {temp}'
-}
 
 tztime local {
     format = "%Y-%m-%d %H:%M:%S"
 }
 
-static_string {
-	format = "|"
+ethernet enp0s25 {
+        format_up = "Eth: up"
+        format_down = ""
 }
+
+wireless wlp4s0 {
+        format_up = "WiFi:%quality"
+        format_down = ""
+}
+
+battery 0 {
+        format = "Bat: %percentage"
+        format_down = "No battery"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+

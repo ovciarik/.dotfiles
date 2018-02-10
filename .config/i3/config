@@ -173,7 +173,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
  bar {
         position bottom
-        status_command py3status -c ~/.config/i3status/config
+        status_command i3status -c ~/.config/i3status/config
     colors {
                 background                      #002b36
                 statusline                      #839496
@@ -218,15 +218,15 @@ client.urgent               #002b36 #dc322f #fdf6e3 #002b36
 # client.urgent $urgent-bg-color $urgent-bg-color $text-color #00ff00
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 set Capture toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%- #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer sset Capture toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
-bindsym XF86Display exec xbacklight -set 1 # set screen brightness to min
+ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+ bindsym XF86Display exec xbacklight -set 1 # set screen brightness to min
 
 # doesn't work ....
 # bindsym $mod+c exec xclip -i -selection clipboard

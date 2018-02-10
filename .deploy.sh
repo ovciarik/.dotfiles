@@ -5,7 +5,6 @@ apt-get install i3lock
 apt-get install suckless-tools
 apt-get install dunst
 apt-get install fonts-font-awesome
-pip install py3status
 
 # keyboard remap
 apt-get install xcape
@@ -32,10 +31,8 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 # neovim plugin manager
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# set zsh config to config
-echo ZDOTDIR=$HOME/.config/zsh > /etc/zsh/zshenv
-
 # fix for pycharm clipboards
+apt-get install xclip
 apt-get purge xsel
 
 update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
@@ -44,6 +41,10 @@ update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 update-alternatives --config vim
 update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 update-alternatives --config editor
+
+# install pip and pip3
+apt-get install python-pip
+apt-get install python3-pip
 
 # neovim python integration
 pip install neovim
