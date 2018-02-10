@@ -108,3 +108,7 @@ alias shitpostify="python -c 'print(reduce(lambda xx, yy: xx+yy[2:], reduce(lamb
 
 yank() { LBUFFER=$LBUFFER$(xclip -o -selection "clipboard") }
 zle -N yank # bound on C-y
+
+alias reboot='systemctl reboot'
+alias susped='systemctl suspend'
+alias poweroff='systemctl poweroff'
