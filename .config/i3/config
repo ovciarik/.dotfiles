@@ -277,6 +277,9 @@ exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
 exec --no-startup-id gsettings set org.nemo.desktop show-desktop-icons false
 
+# disable screen turn off
+exec --no-startup-id xset s off -dpms
+
 # KDE fixes
 
 # KDE support

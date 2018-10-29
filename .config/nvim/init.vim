@@ -1,33 +1,7 @@
-" use system clipboard
-set clipboard=unnamedplus
-
-" show realitive line numbers
-set relativenumber
-set nu
-
 call plug#begin()
-    " async syntax checking
-    Plug 'w0rp/ale'
-
-    " git integration
-    " Plug 'tpope/vim-fugitive'
-    " Plug 'airblade/vim-gitgutter'
-
     " project navigation
     Plug 'scrooloose/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
-    " Plug 'vim-scripts/grep.vim'
-
-    " tagbar
-    " Plug 'majutsushi/tagbar'
-
-    " python integration: jump to definition / find usage / rename
-    Plug 'ervandew/supertab'
-    Plug 'zchee/deoplete-jedi'
-    Plug 'davidhalter/jedi-vim'
-
-    " python integration: requirements
-    Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
     " actions: comment, surround
     Plug 'tpope/vim-commentary'
@@ -40,9 +14,50 @@ call plug#begin()
     " buffers as tabs
     Plug 'ap/vim-buftabline'
 
+    " language support
+    Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh',
+        \ }
+    Plug 'junegunn/fzf'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'ervandew/supertab'
+
+    " git integration
+    " Plug 'tpope/vim-fugitive'
+    " Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['/home/movciarik/.local/bin/pyls'],
+    \ 'javascript': ['/home/movciarik/.nvm/versions/node/v8.12.0/lib/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ }
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+
+nnoremap <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
+
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> gu :call LanguageClient#textDocument_references()<CR>
+
+nnoremap <silent> gh :call LanguageClient#textDocument_documentHighlight()<CR>
+
+nnoremap <silent> <A-r> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> <A-c> :call LanguageClient_contextMenu()<CR>
+
+" use system clipboard
+set clipboard=unnamedplus
+
+" show realitive line numbers
+set relativenumber
+set nu
+
 let g:loaded_python3_provider=1
+
 " solarized color scheme
 colorscheme NeoSolarized
 set background=dark
@@ -51,7 +66,7 @@ set background=dark
 set colorcolumn=100
 
 " comments on ctrl-k
-map <C-K> gccj
+map <C-_> gccj
 
 " disable bullshit modes
 map Q <Nop>
@@ -120,50 +135,8 @@ let mapleader=' '
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabCrMapping = 1
-let g:jedi#show_call_signatures = 1
-
-if exists('&signcolumn')  " Vim 7.4.2201
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
-
-set updatetime=16
-
-" jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>e"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#smart_auto_mappings = 0
 
 nnoremap <C-tab> :bprev<CR>
 nnoremap <C-S-tab> :bnext<CR>
 
-let g:ale_echo_cursor = 1
-let g:ale_echo_msg_error_str = 'Error'
-let g:ale_echo_msg_format = '%severity%: %s [%linter%]'
-let g:ale_echo_msg_warning_str = 'Warn'
-let g:ale_enabled = 1
-let g:ale_keep_list_window_open = 0
-let g:ale_lint_delay = 200
-" let g:ale_lint_on_enter = 1
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_linter_aliases = {}
-let g:ale_linters = {'Haskell': [], 'AsciiDoc': [], 'HTML': [], 'YAML': [], 'TypeScript': [], 'CMake^I': [], 'nix^I': [], 'go': ['go build', 'golint', 'go vet'], 'OCaml^I': [], 'Lua^I': [], 'Erlang^I': [], 'SASS^I': [], 'ASM': [], 'MATLAB^I': [], 'SML^I': [], 'nroff^I': [], 'reStructuredText^I': [], 'CSS': [], 'PHP': [], 'Markdown': [], 'ruby': ['ruby'], 'Rust^I': [], 'C': [], 'Verilog': [], 'XHTML': [], 'Ansible': [], 'Elixir': [], 'JSON^I': [], 'Scala^I': [], 'Crystal^I': [], 'Chef^I': [], 'Kotlin^I': [], 'RPM': [], 'Slim^I': [], 'LaTeX^I': [], 'Bash': [], 'Java^I': [], 'Swift^I': [], 'Texinfo^I': [], 'Perl^I': [], 'C++': [], 'SQL^I': [], 'Ruby': [], 'C#^I': [], 'Pod^I': [], 'Erb^I': [], 'ReasonML': [], 'SCSS^I': [], 'Bourne Shell': [], 'Vim': [], 'Haml': [], 'CoffeeScript': [], 'Fortran^I': [], 'Dockerfile': [], 'D^I': [], 'Text^': [], 'Nim^I': [], 'Elm^I': [], 'Pug^I': [], 'JavaScript': [], 'Cython': [], 'Puppet^I': [], 'Handlebars': [], 'Python': ['flake8']}
-let g:ale_open_list = 0
-let g:ale_set_highlights = 1
-let g:ale_set_loclist = 1
-let g:ale_set_quickfix = 0
-let g:ale_set_signs = 1
-let g:ale_sign_column_always = 0
-let g:ale_sign_error = '>>'
-let g:ale_sign_offset = 1000000
-let g:ale_sign_warning = '--'
-let g:ale_statusline_format = ['%d error(s)', '%d warning(s)', 'OK']
-let g:ale_warn_about_trailing_whitespace = 1
+set mouse=a
