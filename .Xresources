@@ -91,6 +91,7 @@ URxvt.intensityStyles: false
 URxvt*scrollBar:        false
 
 URxvt.perl-ext-common: keyboard-select
+URxvt*.keysym.M-Escape: perl:keyboard-select:activate
 
 URxvt.keysym.Control-Tab: \033[27;5;9~
 URxvt.keysym.Control-ISO_Left_Tab: \033[27;6;9~
