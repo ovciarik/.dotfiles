@@ -36,7 +36,7 @@ set autoindent
 set smartindent
 
 " highlight cursor line
-set cursorline           
+set cursorline
 
 " show whitespace
 set list
@@ -130,7 +130,7 @@ call plug#begin()
     " Plug 'tpope/vim-fugitive'
     " Plug 'airblade/vim-gitgutter'
 
-    " focus lost event
+    " autosave on lost focus
     Plug 'amerlyq/vim-focus-autocmd'
 
 call plug#end()
@@ -152,7 +152,6 @@ let g:loaded_python3_provider=1
 colorscheme NeoSolarized
 set background=dark
 " recolour whitespace
-highlight SpecialKey ctermbg=8 ctermfg=10
 
 nnoremap <silent> <A-1> :NERDTreeFocus<CR>
 
@@ -167,7 +166,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
     \ }
 
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>         
 
 nnoremap <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
@@ -182,7 +181,8 @@ nnoremap <silent> <A-c> :call LanguageClient_contextMenu()<CR>
 
 nnoremap gs : call LanguageClient#textDocument_documentSymbol()<CR>
 
+" vim-focus-autocmd
 " autosave on lost focus
 au FocusLost * silent! wall
-" au BufLeave * silent! wall
-" au TabLeave * silent! wall
+
+highlight Whitespace ctermbg=8 ctermfg=10
