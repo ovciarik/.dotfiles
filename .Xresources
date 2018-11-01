@@ -80,20 +80,27 @@
 *customization:			-
 
 !! set font and size
-*faceName: 				DejaVu Sans Mono
-*faceSize:				12
+*faceName: 				Source Code Pro
+*faceSize:				10
 
 !! urxvt
 URxvt.saveLines: 1000000
 
-URxvt.font: xft:Source Code Pro:pixelsize=14:antialis=true
+
+Xft.dpi:        80
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+URxvt.font: xft:Source Code Pro
 URxvt.intensityStyles: false
 URxvt*scrollBar:        false
 
-URxvt.perl-ext-common: keyboard-select
+/* URxvt*perl-ext-common: keyboard-select, focus-events */
+URxvt*perl-ext-common: focus-events,keyboard-select
 URxvt*.keysym.M-Escape: perl:keyboard-select:activate
 
 URxvt.keysym.Control-Tab: \033[27;5;9~
 URxvt.keysym.Control-ISO_Left_Tab: \033[27;6;9~
 URxvt.keysym.Control-Shift-ISO_Left_Tab: \033[27;6;9~
-

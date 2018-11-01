@@ -11,7 +11,7 @@ set showmatch
 " show ruler info
 set ruler
 
-" colorecolumn as ruler
+" colorecolumn as ruler          
 set colorcolumn=100
 
 " disable bullshit modes
@@ -36,12 +36,11 @@ set autoindent
 set smartindent
 
 " highlight cursor line
-set cursorline
+set cursorline           
 
 " show whitespace
-" set list
-" set listchars=space:.,tab:>-
-" highlight Whitespace ctermfg=Black
+set list
+set listchars=space:.,tab:>-
 
 "" Enable hidden buffers
 set hidden
@@ -65,7 +64,10 @@ set noswapfile
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" fixes
 nnoremap Y y$
+" TODO make this better
+xnoremap p pgvy
 
 " error-resistence
 cnoreabbrev W! w!
@@ -80,14 +82,15 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 
-" autosave on lost focus
-au FocusLost * silent! wall
-au BufLeave * silent! wall
-au TabLeave * silent! wall
 
+" don't lose selection on < and >
+xnoremap <  <gv
+xnoremap >  >gv
 
 nnoremap <C-tab> :bprev<CR>
 nnoremap <C-S-tab> :bnext<CR>
+" \x1b[I
+nnoremap <A-i> :q!<CR>
 
 syntax on
 
@@ -107,7 +110,7 @@ call plug#begin()
     Plug 'tpope/vim-surround'
 
     " quality of life
-    Plug 'bronson/vim-trailing-whitespace'
+    " Plug 'bronson/vim-trailing-whitespace'
     Plug 'iCyMind/NeoSolarized'
 
     " buffers as tabs
@@ -148,6 +151,8 @@ let g:loaded_python3_provider=1
 " neosolarized
 colorscheme NeoSolarized
 set background=dark
+" recolour whitespace
+highlight SpecialKey ctermbg=8 ctermfg=10
 
 nnoremap <silent> <A-1> :NERDTreeFocus<CR>
 
@@ -177,3 +182,7 @@ nnoremap <silent> <A-c> :call LanguageClient_contextMenu()<CR>
 
 nnoremap gs : call LanguageClient#textDocument_documentSymbol()<CR>
 
+" autosave on lost focus
+au FocusLost * silent! wall
+" au BufLeave * silent! wall
+" au TabLeave * silent! wall
