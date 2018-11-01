@@ -52,6 +52,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" remove search
+nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+
 "" Directories for swp files
 set nobackup
 set noswapfile
@@ -128,13 +131,16 @@ call plug#begin()
     Plug 'amerlyq/vim-focus-autocmd'
 
 call plug#end()
+
+" vim-comentary
+nmap <C-_> gccj
+vmap <silent> <C-_> gc
+
 " nerd tree
 autocmd FileType nerdtree nmap <buffer> l o
 autocmd FileType nerdtree nmap <buffer> h x
 autocmd FileType nerdtree nmap <buffer> <ESC> :NERDTreeFocusToggle<CR>
 
-" vim-comentary
-map <C-_> gccj
 
 " neovim python
 let g:loaded_python3_provider=1
