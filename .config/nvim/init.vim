@@ -162,8 +162,9 @@ let g:SuperTabCrMapping = 1
 
 " language server
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
+    \ 'python': ['pyls'],
+    \ 'haskell': ['hie'],
+    \ 'javascript': ['javascript-typescript-stdio'],
     \ }
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>         
