@@ -98,7 +98,9 @@ alias apt='apt-get'
 # export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 # export DESKTOP_SESSION=KDE
-alias lock='i3lock -c 002b36'
+# alias lock='i3lock -c 002b36'
+alias lock='i3lock -c 282c34'
+
 alias cal='cal -y'
 export PATH=$PATH:~/.local/bin
 
@@ -121,3 +123,8 @@ if [ -f '/home/movciarik/bin/google-cloud-sdk/completion.zsh.inc' ]; then source
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+## Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"

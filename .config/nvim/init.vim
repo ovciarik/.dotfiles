@@ -114,7 +114,7 @@ call plug#begin()
 
     " quality of life
     " Plug 'bronson/vim-trailing-whitespace'
-    Plug 'iCyMind/NeoSolarized'
+    " Plug 'iCyMind/NeoSolarized'
 
     " buffers as tabs
     Plug 'ap/vim-buftabline'
@@ -135,6 +135,8 @@ call plug#begin()
 
     " autosave on lost focus
     Plug 'amerlyq/vim-focus-autocmd'
+    Plug 'chriskempson/base16-vim'
+
 
 call plug#end()
 
@@ -152,8 +154,8 @@ autocmd FileType nerdtree nmap <buffer> <ESC> :NERDTreeFocusToggle<CR>
 let g:loaded_python3_provider=1
 
 " neosolarized
-colorscheme NeoSolarized
-set background=dark
+" colorscheme NeoSolarized
+" set background=dark
 " recolour whitespace
 
 nnoremap <silent> <A-1> :NERDTreeFocus<CR>
@@ -190,3 +192,6 @@ set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
 " vim-focus-autocmd
 " autosave on lost focus
 " au FocusLost * silent! wall
+"
+let base16colorspace=256
+colorscheme base16-onedark

@@ -49,8 +49,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn "Input Mono-8" -nf '#f3f4f5' -nb '#2f343f' -sf '#f2f3f4' -sb '#5192df'
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn "Input Mono-8" -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
-bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
-
+# bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#839496' -nb '#002b36' -sf '#002b36' -sb '#b58900'
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -171,19 +170,19 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
- bar {
-        position bottom
-        status_command i3status -c ~/.config/i3status/config
-    colors {
-                background                      #002b36
-                statusline                      #839496
-                separator                       #586e75
-                focused_workspace       #268bd2 #268bdf #002b36
-                active_workspace        #586e75 #586e75 #002b36
-                inactive_workspace      #073642 #002b36 #839496
-                urgent_workspace        #dc322f #dc322f #fdf6e3
-        }
- }
+ # bar {
+ #        position bottom
+ #        status_command i3status -c ~/.config/i3status/config
+ #    colors {
+ #                background                      #002b36
+ #                statusline                      #839496
+ #                separator                       #586e75
+ #                focused_workspace       #268bd2 #268bdf #002b36
+ #                active_workspace        #586e75 #586e75 #002b36
+ #                inactive_workspace      #073642 #002b36 #839496
+ #                urgent_workspace        #dc322f #dc322f #fdf6e3
+ #        }
+ # }
 
 # bar {
         # status_command py3status -c ~/.config/i3status/config
@@ -247,7 +246,7 @@ exec --no-startup-id setxkbmap -layout us
 exec --no-startup-id nm-applet
 
 # backgroud
-exec --no-startup-id xsetroot -solid "#002b36"
+# exec --no-startup-id xsetroot -solid "#002b36"
 # exec --no-startup-id feh --bg-scale ~/.config/background.png
 
 # flux for night mode
@@ -287,3 +286,59 @@ exec --no-startup-id xset s off -dpms
 # for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 for_window [class="Kmix"] floating enable, window_type popup_menu
+## Base16 OneDark
+# Author: Lalit Magant (http://github.com/tilal6991)
+#
+# You can use these variables anywhere in the i3 configuration file.
+
+set $base00 #282c34
+set $base01 #353b45
+set $base02 #3e4451
+set $base03 #545862
+set $base04 #565c64
+set $base05 #abb2bf
+set $base06 #b6bdca
+set $base07 #c8ccd4
+set $base08 #e06c75
+set $base09 #d19a66
+set $base0A #e5c07b
+set $base0B #98c379
+set $base0C #56b6c2
+set $base0D #61afef
+set $base0E #c678dd
+set $base0F #be5046
+
+# Basic bar configuration using the Base16 variables.
+bar {
+    status_command i3status
+
+    colors {
+        background $base00
+        separator  $base01
+        statusline $base04
+
+        # State             Border  BG      Text
+        focused_workspace   $base05 $base0D $base00
+        active_workspace    $base05 $base03 $base00
+        inactive_workspace  $base03 $base01 $base05
+        urgent_workspace    $base08 $base08 $base00
+        binding_mode        $base00 $base0A $base00
+    }
+}
+
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+
+# nf 
+# nb 
+# sf
+# sb
+bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb '#282c34' -sf '#282c34' -sb '#61afef'
+
+exec --no-startup-id xsetroot -solid "#282c34"
