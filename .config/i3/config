@@ -251,7 +251,7 @@ exec --no-startup-id xsetroot -solid "#002b36"
 # exec --no-startup-id feh --bg-scale ~/.config/background.png
 
 # flux for night mode
-exec --no-startup-id fluxgui
+# exec --no-startup-id fluxgui
 
 # notification server
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc

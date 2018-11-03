@@ -1,3 +1,15 @@
+set nocompatible
+filetype plugin indent on
+
+"
+" fixes
+nnoremap Y y$
+
+" TODO make this better
+xnoremap p pgvy
+
+" --------------------------------------------------------------------------------
+"
 " use system clipboard
 set clipboard=unnamedplus
 
@@ -39,10 +51,15 @@ set smartindent
 set cursorline
 
 " show whitespace
-set list
-set listchars=space:.,tab:>-
+" set list
+" set listchars=space:.,tab:>-
 
-"" Enable hidden buffers
+" Faster redrawing.
+set ttyfast
+
+" Only redraw when necessary.
+set lazyredraw
+" Switch between buffers without having to save first.
 set hidden
 
 "" Searching
@@ -58,17 +75,12 @@ nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 set nobackup
 set noswapfile
 
-
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" fixes
-nnoremap Y y$
-" TODO make this better
-xnoremap p pgvy
-
+"
 " error-resistence
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
@@ -82,21 +94,12 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 
-
-" don't lose selection on < and >
-xnoremap <  <gv
-xnoremap >  >gv
-
 nnoremap <C-tab> :bprev<CR>
 nnoremap <C-S-tab> :bnext<CR>
-" \x1b[I
-nnoremap <A-i> :q!<CR>
 
 syntax on
 
 set mouse=a
-
-let mapleader=' '
 
 " -------------------------------------------------------------------------------------------------
 
@@ -182,8 +185,8 @@ nnoremap <silent> <A-c> :call LanguageClient_contextMenu()<CR>
 
 nnoremap gs : call LanguageClient#textDocument_documentSymbol()<CR>
 
+set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
+
 " vim-focus-autocmd
 " autosave on lost focus
-au FocusLost * silent! wall
-
-highlight Whitespace ctermbg=8 ctermfg=10
+" au FocusLost * silent! wall
