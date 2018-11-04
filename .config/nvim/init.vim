@@ -142,11 +142,12 @@ call plug#begin()
     Plug 'ervandew/supertab'
 
     " git integration
-    " Plug 'tpope/vim-fugitive'
-    " Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
 
     " Base16 themes
     Plug 'chriskempson/base16-vim'
+    Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
