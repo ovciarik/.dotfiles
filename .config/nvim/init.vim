@@ -23,7 +23,7 @@ set showmatch
 " show ruler info
 set ruler
 
-" colorecolumn as ruler          
+" colorecolumn as ruler
 set colorcolumn=100
 
 " disable bullshit modes
@@ -57,8 +57,6 @@ set cursorline
 " Faster redrawing.
 set ttyfast
 
-" Only redraw when necessary.
-set lazyredraw
 " Switch between buffers without having to save first.
 set hidden
 
@@ -113,11 +111,7 @@ call plug#begin()
     Plug 'tpope/vim-surround'
 
     " quality of life
-    " Plug 'bronson/vim-trailing-whitespace'
-    " Plug 'iCyMind/NeoSolarized'
-
-    " buffers as tabs
-    Plug 'ap/vim-buftabline'
+    Plug 'bronson/vim-trailing-whitespace'
 
     " language support
     " Plug 'w0rp/ale'
@@ -133,10 +127,10 @@ call plug#begin()
     " Plug 'tpope/vim-fugitive'
     " Plug 'airblade/vim-gitgutter'
 
-    " autosave on lost focus
-    Plug 'amerlyq/vim-focus-autocmd'
+    " Base16 themes
     Plug 'chriskempson/base16-vim'
 
+    " Status line + Buffer line
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
@@ -175,7 +169,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio'],
     \ }
 
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>         
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 
 nnoremap <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
@@ -202,4 +196,4 @@ colorscheme base16-onedark
 let g:airline_powerline_fonts=1
 
 let g:airline_theme='onedark'
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1

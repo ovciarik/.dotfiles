@@ -1,6 +1,6 @@
 [global]
     # font = Input Mono 10
-    font = SourceCodePro 10
+    font = SourceCodeProforPowerline 11
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -129,7 +129,6 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
     
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
@@ -148,10 +147,6 @@
     # Paths to default icons.
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-[frame]
-    width = 1
-    # color = "#586e75"
-    color = "#abb2bf"
 
 [shortcuts]
 
@@ -174,21 +169,28 @@
     # Context menu.
     context = ctrl+shift+period
 
+[frame]
+    width = 1
+    color = "#abb2bf"
+
+
+separator_color = "#abb2bf"
+
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     # background = "#002b36"
     # foreground = "#586e75"
 
-    background = "#282c34"
-    foreground = "#abb2bf"
+    background = "#353b45"
+    foreground = "#545862"
     timeout = 10
 
 [urgency_normal]
     # background = "#002b36"
     # foreground = "#839496"
-    background = "#61afef"
-    foreground = "#282c34"
+    background = "#3e4451"
+    foreground = "#abb2bf"
     timeout = 10
 
 [urgency_critical]

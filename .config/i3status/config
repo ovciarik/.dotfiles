@@ -3,8 +3,6 @@ general {
     interval = 5
 }
 
-order += "wireless wlp4s0"
-order += "ethernet enp0s25"
 order += "battery 0"
 order += "tztime local"
 
@@ -12,18 +10,9 @@ tztime local {
     format = "%Y-%m-%d %H:%M:%S"
 }
 
-ethernet enp0s25 {
-        format_up = "Eth: up"
-        format_down = ""
-}
-
-wireless wlp4s0 {
-        format_up = "WiFi:%quality"
-        format_down = ""
-}
 
 battery 0 {
-        format = "Bat: %percentage"
+        format = "%status %remaining"
         format_down = "No battery"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
