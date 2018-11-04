@@ -8,6 +8,8 @@ nnoremap Y y$
 " TODO make this better
 xnoremap p pgvy
 
+map gw <C-w>
+
 " --------------------------------------------------------------------------------
 "
 " use system clipboard
@@ -16,12 +18,19 @@ set clipboard=unnamedplus
 " show realitive line numbers
 set relativenumber
 set number
+set noruler
 
 " highlight matching brackets
 set showmatch
 
+" show showing modes in last row
+set noshowmode
+
+" hide status line
+set laststatus=0
+
 " show ruler info
-set ruler
+set noruler
 
 " colorecolumn as ruler
 set colorcolumn=100
@@ -32,6 +41,7 @@ map q: <Nop>
 
 " fold method for python
 set foldmethod=indent
+" set foldmethod=syntax
 set foldlevelstart=99
 
 " tab to spaces
@@ -102,6 +112,7 @@ set mouse=a
 " -------------------------------------------------------------------------------------------------
 
 call plug#begin()
+
     " project navigation
     Plug 'scrooloose/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
@@ -109,9 +120,6 @@ call plug#begin()
     " actions: comment, surround
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
-
-    " quality of life
-    Plug 'bronson/vim-trailing-whitespace'
 
     " language support
     " Plug 'w0rp/ale'
@@ -130,9 +138,6 @@ call plug#begin()
     " Base16 themes
     Plug 'chriskempson/base16-vim'
 
-    " Status line + Buffer line
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " vim-comentary
@@ -184,17 +189,8 @@ nnoremap gs : call LanguageClient#textDocument_documentSymbol()<CR>
 
 set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
 
-" vim-focus-autocmd
-" autosave on lost focus
-" au FocusLost * silent! wall
-"
-"
 let base16colorspace=256
 colorscheme base16-onedark
-let g:airline_powerline_fonts=1
-
-let g:airline_theme='onedark'
-let g:airline#extensions#tabline#enabled = 1
 
 " remap / in visual selection to seatch for selected text
 function! s:VSetSearch(cmdtype)
