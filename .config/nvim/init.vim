@@ -109,6 +109,16 @@ syntax on
 
 set mouse=a
 
+" remap / in visual selection to seatch for selected text
+function! s:VSetSearch(cmdtype)
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
+xnoremap / :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
+
 " -------------------------------------------------------------------------------------------------
 
 call plug#begin()
@@ -170,6 +180,7 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'haskell': ['hie'],
     \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'json': ['javascript-typescript-stdio'],
     \ }
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
@@ -191,13 +202,3 @@ set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
 
 let base16colorspace=256
 colorscheme base16-onedark
-
-" remap / in visual selection to seatch for selected text
-function! s:VSetSearch(cmdtype)
-  let temp = @s
-  norm! gv"sy
-  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
-  let @s = temp
-endfunction
-
-xnoremap / :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
