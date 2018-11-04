@@ -133,8 +133,6 @@ call plug#begin()
     " Status line + Buffer line
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-
-
 call plug#end()
 
 " vim-comentary
@@ -197,3 +195,13 @@ let g:airline_powerline_fonts=1
 
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
+
+" remap / in visual selection to seatch for selected text
+function! s:VSetSearch(cmdtype)
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
+xnoremap / :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
