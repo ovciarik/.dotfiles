@@ -123,13 +123,23 @@ xnoremap / :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 
 call plug#begin()
 
+    " actions: comment, surround
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+
     " project navigation
     Plug 'scrooloose/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
 
-    " actions: comment, surround
-    Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-surround'
+    " buffers in tab line
+    Plug 'ap/vim-buftabline'
+
+    " Base16 themes
+    Plug 'chriskempson/base16-vim'
+
+    " git integration
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
 
     " language support
     " Plug 'w0rp/ale'
@@ -140,14 +150,6 @@ call plug#begin()
     Plug 'junegunn/fzf'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'ervandew/supertab'
-
-    " git integration
-    Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
-
-    " Base16 themes
-    Plug 'chriskempson/base16-vim'
-    Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
