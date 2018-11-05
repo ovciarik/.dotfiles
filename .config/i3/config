@@ -292,3 +292,4 @@ bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb 
 exec --no-startup-id xsetroot -solid "#282c34"
 
 exec --no-startup-id redshift
+bindsym Control+w exec ~/firehax.sh   
