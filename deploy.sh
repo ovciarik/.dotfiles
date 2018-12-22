@@ -8,11 +8,9 @@
 # TODO firefox settings
 # TODO deploy just vim+tmux+zsh (server/other PC deployment)
 
-sudo apt-get -y install curl
-sudo apt-get -y install git
+sudo apt-get install -y curl
+sudo apt-get install -y git
 
-git clone --separate-git-dir="$HOME/.dotfiles" https://github.com/ovciarik/.dotfiles "/tmp/dotfiles"
-cp -r /tmp/dotfiles/. $HOME
 
 # fix for pycharm clipboards
 sudo apt-get install -y xclip
@@ -51,6 +49,9 @@ sudo apt-get install -y ranger
 # sudo apt-get install -y mediainfo
 # sudo apt-get install -y unoconv
 
+sudo apt-get install -y python-pip
+
+sudo apt-get install -y python3-pip
 # neovim
 sudo apt-get install -y neovim
 
@@ -62,8 +63,10 @@ update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 update-alternatives --config editor
 
 # neovim deps
-sudo apt-get install -y python-pip
-sudo apt-get install -y python3-pip
+
+git clone --separate-git-dir="$HOME/.dotfiles" https://github.com/ovciarik/.dotfiles "/tmp/dotfiles"
+cp -r /tmp/dotfiles/. $HOME
+
 pip install neovim
 pip3 install neovim
 
