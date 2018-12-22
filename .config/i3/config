@@ -256,11 +256,12 @@ set $base0F #be5046
 # Basic bar configuration using the Base16 variables.
 bar {
     status_command i3status
+    position top
 
     colors {
         background $base00
         separator  $base01
-        statusline $base04
+        statusline $base07
 
         # State             Border  BG      Text
         focused_workspace   $base05 $base0D $base00
@@ -291,5 +292,4 @@ bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb 
 # set desktop background
 exec --no-startup-id xsetroot -solid "#282c34"
 
-exec --no-startup-id redshift
-bindsym Control+w exec ~/firehax.sh   
+# exec --no-startup-id redshift
