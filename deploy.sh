@@ -11,8 +11,7 @@
 sudo apt-get install -y curl
 sudo apt-get install -y git
 
-
-# fix for pycharm clipboards
+# better clipboard
 sudo apt-get install -y xclip
 
 # i3
@@ -39,7 +38,6 @@ sudo apt-get install -y xcape
 # file browser
 sudo apt-get install -y ranger
 
-
 # ranger deps
 # sudo apt-get install -y file
 # sudo apt-get install -y caca-utils
@@ -50,8 +48,8 @@ sudo apt-get install -y ranger
 # sudo apt-get install -y unoconv
 
 sudo apt-get install -y python-pip
-
 sudo apt-get install -y python3-pip
+
 # neovim
 sudo apt-get install -y neovim
 
@@ -62,16 +60,18 @@ update-alternatives --config vim
 update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 update-alternatives --config editor
 
-# neovim deps
-
 git clone --separate-git-dir="$HOME/.dotfiles" https://github.com/ovciarik/.dotfiles "/tmp/dotfiles"
 cp -r /tmp/dotfiles/. $HOME
 
+ln -s "$HOME/.config/base16-shell/scripts/base16-onedark.sh" ./.base16_theme
+
+# neovim deps
 pip install neovim
 pip3 install neovim
 
 # set zsh as default shell
 chsh -s $(which zsh)
+
 
 echo "Reboot the PC, and log into i3"
 
