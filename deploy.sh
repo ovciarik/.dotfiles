@@ -47,11 +47,12 @@ sudo apt-get install -y ranger
 # sudo apt-get install -y mediainfo
 # sudo apt-get install -y unoconv
 
-sudo apt-get install -y python-pip
-sudo apt-get install -y python3-pip
-
 # neovim
 sudo apt-get install -y neovim
+
+# neovim deps
+sudo apt-get install -y python-pip
+sudo apt-get install -y python3-pip
 
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 # sudo update-alternatives --config vi
@@ -71,7 +72,6 @@ pip3 install neovim
 
 # set zsh as default shell
 chsh -s $(which zsh)
-
 
 echo "Reboot the PC, and log into i3"
 
