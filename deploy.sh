@@ -23,6 +23,9 @@ sudo apt-get install -y suckless-tools
 sudo apt-get install -y dunst
 # apt-get install -y fonts-font-awesome
 
+# scrot
+sudo apt-get install -y scrot
+
 # shell
 sudo apt-get install -y zsh
 
