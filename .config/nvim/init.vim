@@ -92,6 +92,7 @@ nnoremap N Nzzzv
 " error-resistence
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
+cnoreabbrev Q1 q!
 cnoreabbrev q1 q!
 cnoreabbrev Qall! qall!
 cnoreabbrev Wq wq
@@ -102,8 +103,8 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 
-nnoremap <C-tab> :bprev<CR>
-nnoremap <C-S-tab> :bnext<CR>
+nnoremap <C-tab> :bnext<CR>
+nnoremap <C-S-tab> :bprev<CR>
 
 syntax on
 
@@ -181,6 +182,7 @@ let g:SuperTabCrMapping = 1
 " language server
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
+    \ 'python3': ['pyls'],
     \ 'haskell': ['hie'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'json': ['javascript-typescript-stdio'],
@@ -192,7 +194,6 @@ nnoremap <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> gr :call LanguageClient#textDocument_references()<CR>
 
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gu :call LanguageClient#textDocument_references()<CR>
 
 nnoremap <silent> gh :call LanguageClient#textDocument_documentHighlight()<CR>
 
