@@ -94,16 +94,24 @@ setopt completealiases
 
 alias apt-installed='comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n "s/^Package: //p" | sort -u) | less'
 
+# git aliases
+alias gs='git status'
+alias gaa='git add --all'
+alias gau='git add -u'
+alias gcm='git commit -m'
+alias gc='git commit'
+alias gp='git push'
+
 # export XDG_CURRENT_DESKTOP=KDE
 # export XDG_SESSION_DESKTOP=KDE
 # export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 # export DESKTOP_SESSION=KDE
 # alias lock='i3lock -c 002b36'
-alias lock='i3lock -c 282c34'
+alias lock='i3lock -c 282c34 && sleep 1; xset dpms force off'
 
 alias cal='cal -y'
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:~/go/bin
 
 alias ra='ranger'
 alias shitpostify="python -c 'print(reduce(lambda xx, yy: xx+yy[2:], reduce(lambda x, y: [x[0]+y[0], x[1]+y[1]],map(lambda x: [x, \"\n\"+x], raw_input().strip()))))'"
