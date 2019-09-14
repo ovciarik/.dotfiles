@@ -18,8 +18,7 @@ sudo apt-get install -y xclip
 sudo apt-get install -y i3-wm
 sudo apt-get install -y i3status
 sudo apt-get install -y i3lock
-# dmenu
-sudo apt-get install -y suckless-tools
+sudo apt-get install -y suckless-tools # dmenu
 sudo apt-get install -y dunst
 # apt-get install -y fonts-font-awesome
 
