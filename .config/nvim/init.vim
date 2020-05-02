@@ -143,11 +143,12 @@ call plug#begin()
     Plug 'airblade/vim-gitgutter'
 
     " language support
-    " Plug 'w0rp/ale'
+    " Plug 'neovim/nvim-lsp'
     Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh',
+        \ }
+
     Plug 'junegunn/fzf'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'ervandew/supertab'
@@ -202,7 +203,12 @@ nnoremap <silent> <A-c> :call LanguageClient_contextMenu()<CR>
 
 nnoremap gs : call LanguageClient#textDocument_documentSymbol()<CR>
 
+let g:LanguageClient_settingsPath = "~/.config/nvim/settings.json"
+
 set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
+"
+"
 
 let base16colorspace=256
 colorscheme base16-onedark
+
