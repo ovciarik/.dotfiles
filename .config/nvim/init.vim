@@ -124,9 +124,8 @@ xnoremap / :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 
 call plug#begin()
 
-    " actions: comment, surround
-    Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-surround'
+    " actions: comment
+    Plug 'tomtom/tcomment_vim'
 
     " project navigation
     Plug 'scrooloose/nerdtree'
@@ -156,8 +155,8 @@ call plug#begin()
 call plug#end()
 
 " vim-comentary
-nmap <C-_> gccj
-vmap <silent> <C-_> gc
+nnoremap <C-_> :TComment<CR>j
+vnoremap <silent> <C-_> :TComment<CR>
 
 " nerd tree
 autocmd FileType nerdtree nmap <buffer> l o
@@ -187,6 +186,7 @@ let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie'],
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'json': ['javascript-typescript-stdio'],
+    \ 'vue': ['vls'],
     \ }
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
