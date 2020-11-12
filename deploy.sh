@@ -71,9 +71,14 @@ ln -s "$HOME/.config/base16-shell/scripts/base16-onedark.sh" ./.base16_theme
 # neovim deps
 pip install neovim
 pip3 install neovim
+# python language server
+pip3 install 'python-language-server[all]'
 
 # set zsh as default shell
 chsh -s $(which zsh)
+
+# add user to video group, to change brightness
+sudo usermod $(whoami) -a -G video
 
 echo "Reboot the PC, and log into i3"
 
