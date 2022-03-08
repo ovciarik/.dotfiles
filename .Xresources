@@ -59,7 +59,7 @@
 
 !! set font and size
 *faceName: 				SFMono
-*faceSize:				11
+*faceSize:				13
 
 !! urxvt
 URxvt.saveLines: 1000000
@@ -73,7 +73,7 @@ Xft.rgba:       rgb
 Xft.hinting:    1
 Xft.hintstyle:  hintslight
 
-URxvt.font: xft:SFMono:size=11:minspace=False, xft:Source Code Pro Powerline:size=11:minspace=False, xft:Dejavu Sans:size=10
+URxvt.font: xft:SFMono:size=13:minspace=False, xft:Source Code Pro Powerline:size=13:minspace=False, xft:Dejavu Sans:size=12
 URxvt.letterSpace: -1
 URxvt*scrollBar: false
 !! this was hash for SolarizedDark

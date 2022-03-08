@@ -12,7 +12,7 @@ tztime local {
 
 
 battery 0 {
-        format = "%status %percentage"
+        format = "%status %percentage %emptytime"
         format_down = "No battery"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10

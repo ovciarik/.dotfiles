@@ -9,15 +9,15 @@
 set $mod Mod4
 
 # set $font Source Code Pro Bold 8
-set $font SFMono Semibold 8 
-set $font_dmenu "SFMono-8"
+set $font SFMono 13 
+# set $font_dmenu "SFMono-13"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:InputMono Medium 8
 # font pango:Source Code Pro Regular 8
 font pango:$font
-new_window pixel 1
+default_border pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -35,7 +35,8 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec /usr/bin/urxvt
+# bindsym $mod+Return exec /usr/bin/urxvt
+bindsym $mod+Return exec /usr/bin/urxvt -cd "`xcwd`"
 # bindsym $mod+Return exec /usr/local/bin/st
 
 # kill focused window
@@ -163,13 +164,13 @@ bindsym $mod+r mode "resize"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+ #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%- #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 bindsym XF86AudioMicMute exec --no-startup-id amixer sset Capture toggle
 
 # Sreen brightness controls
- bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
- bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
- bindsym XF86Display exec xbacklight -set 1 # set screen brightness to min
+bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +500 # increase screen brightness
+bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 500- # decrease screen brightness
+bindsym XF86Display exec brightnessctl -d intel_backlight set 1 # set screen brightness to min
 
 # doesn't work ....
 # bindsym $mod+c exec xclip -i -selection clipboard
@@ -188,6 +189,12 @@ exec --no-startup-id setxkbmap -layout us
 
 # wifi manager
 exec --no-startup-id nm-applet
+
+# bluetooth
+exec --no-startup-id blueman-applet
+
+# sound
+exec --no-startup-id pasystray
 
 # backgroud
 # exec --no-startup-id xsetroot -solid "#002b36"
@@ -209,7 +216,7 @@ exec --no-startup-id xcape -e 'Mode_switch=Escape'
 # exec --no-startup-id autocutsel -s PRIMARY
 
 # set keyboard repetition rate
-exec --no-startup-id xset r rate 250 30
+exec --no-startup-id xset r rate 250 60
 
 # Gnome fixes
 
@@ -287,7 +294,8 @@ client.background       $base07
 # installed.
 
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb '#282c34' -sf '#282c34' -sb '#61afef'
+# bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb '#282c34' -sf '#282c34' -sb '#61afef'
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 13" -show-icons -theme $HOME/.config/rofi-collection/onedark/onedark.rasi
 
 # set desktop background
 exec --no-startup-id xsetroot -solid "#282c34"
@@ -296,3 +304,5 @@ exec --no-startup-id redshift
 
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xcape -e 'Mode_switch=Escape'
+# exec xrandr --dpi 220
+

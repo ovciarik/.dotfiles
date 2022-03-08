@@ -184,11 +184,11 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'python3': ['pyls'],
     \ 'haskell': ['hie'],
-    \ 'javascript': ['javascript-typescript-stdio'],
     \ 'json': ['javascript-typescript-stdio'],
     \ 'vue': ['vls'],
     \ }
 
+    " \ 'javascript': ['javascript-typescript-stdio'],
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 
 nnoremap <silent> <C-]> :call LanguageClient#textDocument_definition()<CR>
