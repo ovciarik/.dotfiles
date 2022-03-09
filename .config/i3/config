@@ -295,7 +295,7 @@ client.background       $base07
 
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb '#282c34' -sf '#282c34' -sb '#61afef'
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 13" -show-icons -theme $HOME/.config/rofi-collection/onedark/onedark.rasi
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 13" -show-icons
 
 # set desktop background
 exec --no-startup-id xsetroot -solid "#282c34"
