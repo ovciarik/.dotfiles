@@ -197,7 +197,9 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id pasystray
 
 # backgroud
-# exec --no-startup-id xsetroot -solid "#002b36"
+exec --no-startup-id xsetroot -solid "#002b36"
+#
+# exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 # exec --no-startup-id feh --bg-scale ~/.config/background.png
 
 # flux for night mode
@@ -295,7 +297,7 @@ client.background       $base07
 
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb '#282c34' -sf '#282c34' -sb '#61afef'
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 13" -show-icons
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 13" -show-icons -theme $HOME/.config/rofi/themes/onedark.rasi
 
 # set desktop background
 exec --no-startup-id xsetroot -solid "#282c34"

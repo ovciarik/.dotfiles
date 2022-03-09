@@ -1,0 +1,55 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Something Found in the Internet
+ *
+ * User: Contributors
+ * Copyright: *!
+ */
+
+configuration {
+       modi: "window,run,ssh,drun";
+       font: "SFMono 13";
+       icon-theme: "Papirus";
+       show-icons: true;
+    border: 0px;
+}
+
+
+* {
+       background-color: #282c34;
+       text-color: #abb2bf;
+       location: center;
+}
+
+mainbox {
+    border: 1px;
+    border-color: #61afef;
+}
+
+prompt {
+       enabled: true;
+       padding: 0% 0.5% 0% 0%;
+       font: "SFMono 13";
+       text-color: #abb2bf;
+       background-color: #282c34;
+    padding: 0.5em;
+}
+
+entry {
+    padding: 0.5em;
+       font: "SFMono 13";
+}
+
+element {
+    padding: 0.5em;
+       font: "SFMono 13";
+}
+
+element-icon {
+       size: 25px;
+}
+
+element selected {
+       text-color: #98c379;
+}
