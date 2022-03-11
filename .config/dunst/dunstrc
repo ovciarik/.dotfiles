@@ -1,6 +1,6 @@
 [global]
     # font = Input Mono 10
-    font = SourceCodeProforPowerline 11
+    font = SFMono 12
     
     # Allow a small subset of html markup:
     #   <b>bold</b>

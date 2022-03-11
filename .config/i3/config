@@ -9,7 +9,7 @@
 set $mod Mod4
 
 # set $font Source Code Pro Bold 8
-set $font SFMono 13 
+set $font SFPro Display Regular 14
 # set $font_dmenu "SFMono-13"
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -35,8 +35,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-# bindsym $mod+Return exec /usr/bin/urxvt
-bindsym $mod+Return exec /usr/bin/urxvt -cd "`xcwd`"
+bindsym $mod+Return exec /usr/bin/urxvt
 # bindsym $mod+Return exec /usr/local/bin/st
 
 # kill focused window
@@ -194,12 +193,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 # sound
-exec --no-startup-id pasystray
+# exec --no-startup-id pasystray
+exec --no-startup-id volumeicon
 
 # backgroud
-exec --no-startup-id xsetroot -solid "#002b36"
+# exec --no-startup-id xsetroot -solid "#282c34"
 #
-# exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 # exec --no-startup-id feh --bg-scale ~/.config/background.png
 
 # flux for night mode
@@ -223,11 +223,11 @@ exec --no-startup-id xset r rate 250 60
 # Gnome fixes
 
 # gnome theme
-exec --no-startup-id gnome-settings-daemon
+# exec --no-startup-id gnome-settings-daemon
 
 # fix nautilius issue on Ubuntu
-exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
-exec --no-startup-id gsettings set org.nemo.desktop show-desktop-icons false
+# exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
+# exec --no-startup-id gsettings set org.nemo.desktop show-desktop-icons false
 
 # disable screen turn off
 exec --no-startup-id xset s off -dpms
@@ -297,7 +297,7 @@ client.background       $base07
 
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb '#282c34' -sf '#282c34' -sb '#61afef'
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 13" -show-icons -theme $HOME/.config/rofi/themes/onedark.rasi
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 14" -show-icons -theme $HOME/.config/rofi/themes/onedark.rasi
 
 # set desktop background
 exec --no-startup-id xsetroot -solid "#282c34"
