@@ -28,6 +28,7 @@ yay -S --noconfirm brightnessctl
 yay -S --noconfirm qbittorrent
 yay -S --noconfirm tlp
 yay -S --noconfirm tlp-rdw
+yay -S --noconfirm imwheel
 # enable service after installation
 sudo systemctl enable tlp.service
 systemctl enable NetworkManager-dispatcher.service
