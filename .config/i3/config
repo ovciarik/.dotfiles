@@ -167,82 +167,16 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 bindsym XF86AudioMicMute exec --no-startup-id amixer sset Capture toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +500 # increase screen brightness
-bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 500- # decrease screen brightness
+bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +50 # increase screen brightness
+bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 50- # decrease screen brightness
 bindsym XF86Display exec brightnessctl -d intel_backlight set 1 # set screen brightness to min
-
-# doesn't work ....
-# bindsym $mod+c exec xclip -i -selection clipboard
-# bindsym $mod+v exec xclip -o -selection clipboard
 
 bindsym Print exec scrot # print screen
 
-# enforce US layout
-exec --no-startup-id setxkbmap -layout us
-
-# volume control
-# exec --no-startup-id pnmixer
-# exec --no-startup-id kmix
-# exec --no-startup-id volumeicon
-
-
-# wifi manager
-exec --no-startup-id nm-applet
-
-# bluetooth
-exec --no-startup-id blueman-applet
-
-# sound
-# exec --no-startup-id pasystray
-exec --no-startup-id volumeicon
-
-# backgroud
-# exec --no-startup-id xsetroot -solid "#282c34"
-#
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-# exec --no-startup-id feh --bg-scale ~/.config/background.png
-
-# flux for night mode
-# exec --no-startup-id fluxgui
-
-# notification server
-exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-
-# remap capslock to esc
-# exec setxkbmap -option 'caps:ctrl_modifier'
-exec --no-startup-id xmodmap ~/.Xmodmap
-exec --no-startup-id xcape -e 'Mode_switch=Escape'
-
-# sync clipboards
-# exec --no-startup-id autocutsel
-# exec --no-startup-id autocutsel -s PRIMARY
-
-# set keyboard repetition rate
-exec --no-startup-id xset r rate 250 60
-
-# Gnome fixes
-
-# gnome theme
-# exec --no-startup-id gnome-settings-daemon
-
-# fix nautilius issue on Ubuntu
-# exec --no-startup-id gsettings set org.gnome.desktop.background show-desktop-icons false
-# exec --no-startup-id gsettings set org.nemo.desktop show-desktop-icons false
-
-# disable screen turn off
-exec --no-startup-id xset s off -dpms
-
-# KDE fixes
-
-# KDE support
-# exec --no-startup-id wmctrl -c Plasma
-# for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
-for_window [class="Kmix"] floating enable, window_type popup_menu
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 14" -show-icons -theme $HOME/.config/rofi/themes/onedark.rasi
 
 ## Base16 OneDark
 # Author: Lalit Magant (http://github.com/tilal6991)
-#
 # You can use these variables anywhere in the i3 configuration file.
 
 set $base00 #282c34
@@ -290,21 +224,43 @@ client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
-# start dmenu (a program launcher)
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-# bindsym $mod+d exec --no-startup-id dmenu_run -fn $font_dmenu -nf '#abb2bf' -nb '#282c34' -sf '#282c34' -sb '#61afef'
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 14" -show-icons -theme $HOME/.config/rofi/themes/onedark.rasi
-
-# set desktop background
-exec --no-startup-id xsetroot -solid "#282c34"
-
-exec --no-startup-id redshift
-
 exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xcape -e 'Mode_switch=Escape'
-# exec xrandr --dpi 220
+
+
+exec --no-startup-id redshift
+exec --no-startup-id clipit
+exec --no-startup-id xfce4-power-manager
+
+# enforce US layout
+exec --no-startup-id setxkbmap -layout us
+
+
+# wifi manager
+exec --no-startup-id nm-applet
+
+# bluetooth
+exec --no-startup-id blueman-applet
+
+# sound
+exec --no-startup-id volumeicon
+# exec --no-startup-id pasystray
+
+# backgroud
+# exec --no-startup-id xsetroot -solid "#282c34"
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+
+# notification server
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
+# remap capslock to esc
+# exec setxkbmap -option 'caps:ctrl_modifier'
+exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id xcape -e 'Mode_switch=Escape'
+
+# set keyboard repetition rate
+exec --no-startup-id xset r rate 250 60
+
+# disable screen turn off
+exec --no-startup-id xset s off -dpms
 
