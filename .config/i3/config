@@ -18,6 +18,7 @@ set $font SFPro Display Regular 14
 # font pango:Source Code Pro Regular 8
 font pango:$font
 default_border pixel 1
+default_floating_border normal
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -171,7 +172,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +50 # incr
 bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 50- # decrease screen brightness
 bindsym XF86Display exec brightnessctl -d intel_backlight set 1 # set screen brightness to min
 
-bindsym Print exec scrot # print screen
+bindsym --release Print exec scrot -s # print screen
+bindsym Shift+Print exec simplescreenrecorder # print screen
 
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "SFMono Sans 14" -show-icons -theme $HOME/.config/rofi/themes/onedark.rasi
 
@@ -264,3 +266,5 @@ exec --no-startup-id xset r rate 250 60
 # disable screen turn off
 exec --no-startup-id xset s off -dpms
 
+
+for_window [title="SimpleScreenRecorder"] floating enable
