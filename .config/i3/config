@@ -265,7 +265,7 @@ exec --no-startup-id xset r rate 250 60
 
 # disable screen turn off
 exec --no-startup-id xset s off -dpms
-exec --no-startup-id imwheel
+exec --no-startup-id imwheel -b '45'
 
 
 for_window [title="SimpleScreenRecorder"] floating enable

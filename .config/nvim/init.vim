@@ -128,8 +128,8 @@ call plug#begin()
     Plug 'tomtom/tcomment_vim'
 
     " project navigation
-    Plug 'scrooloose/nerdtree'
-    Plug 'jistr/vim-nerdtree-tabs'
+    " Plug 'scrooloose/nerdtree'
+    " Plug 'jistr/vim-nerdtree-tabs'
 
     " buffers in tab line
     Plug 'ap/vim-buftabline'
@@ -138,8 +138,8 @@ call plug#begin()
     Plug 'chriskempson/base16-vim'
 
     " git integration
-    Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
+    " Plug 'tpope/vim-fugitive'
+    " Plug 'airblade/vim-gitgutter'
 
     " language support
     " Plug 'neovim/nvim-lsp'
@@ -148,7 +148,7 @@ call plug#begin()
         "\ 'do': 'bash install.sh',
         "\ }
 
-    Plug 'junegunn/fzf'
+    " Plug 'junegunn/fzf'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'ervandew/supertab'
 
