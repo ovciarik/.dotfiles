@@ -74,8 +74,18 @@ Xft.hinting:    1
 Xft.hintstyle:  hintslight
 
 URxvt.font: xft:SFMono:size=14:minspace=False
-URxvt.letterSpace: -1
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 0
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
 URxvt*scrollBar: false
+URxvt.iso14755: false
+
+URxvt.urlLauncher: google-chrome-stable
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
 !! this was hash for SolarizedDark
 !! URxvt.intensityStyles: false
 
