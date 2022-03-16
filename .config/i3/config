@@ -170,7 +170,8 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer sset Capture toggle
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +50 # increase screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 50- # decrease screen brightness
-bindsym XF86Display exec brightnessctl -d intel_backlight set 1 # set screen brightness to min
+bindsym XF86Display exec ~/.config/brightness.sh
+ # set screen brightness to min
 
 bindsym --release Print exec scrot -s # print screen
 bindsym Shift+Print exec simplescreenrecorder # print screen
@@ -231,7 +232,6 @@ exec --no-startup-id xcape -e 'Mode_switch=Escape'
 
 
 exec --no-startup-id redshift
-exec --no-startup-id clipit
 exec --no-startup-id xfce4-power-manager
 
 # enforce US layout
@@ -269,3 +269,6 @@ exec --no-startup-id imwheel -b '45'
 
 
 for_window [title="SimpleScreenRecorder"] floating enable
+
+exec --no-startup-id xset b off
+
